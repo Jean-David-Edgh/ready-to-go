@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Switch from "./components/Switch";
+import Launch from "./components/Launch";
+import { useState } from "react";
 
 function App() {
+  const [switched, setSwitch] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header />
+
+      <div className="body">
+        <div className="toggle">
+          <Switch switched={switched} setSwitch={setSwitch} />
+          <Switch switched={switched} setSwitch={setSwitch} />
+          <Switch switched={switched} setSwitch={setSwitch} />
+        </div>
+        <div className="ship">
+          <Launch />
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 }
