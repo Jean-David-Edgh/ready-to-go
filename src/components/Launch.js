@@ -1,5 +1,5 @@
 const Launch = () => {
-  return <div className="launch">YO</div>;
+  return <div className="launch">NO WAY !</div>;
 };
 
 export default Launch;

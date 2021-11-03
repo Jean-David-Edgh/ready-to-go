@@ -1,19 +1,24 @@
 const Switch = ({ switched, setSwitch }) => {
-  const clickedOn = () => {
-    const result = <button className="buttonOff btl">ON</button>;
-    return setSwitch(result);
+  const handleClick = () => {
+    if (switched === false) {
+      return setSwitch(false);
+    } else setSwitch(true);
   };
-  //   const clickedOff = () => {
-  //     return <button className="buttonOn">OFF</button>;
-  //   };
 
   return (
     <div className="switch">
-      {" "}
-      <button className="buttonOn btl" onClick={clickedOn}>
+      <button
+        className={switched === false ? "buttonOff tl" : "buttonOn btl"}
+        onClick={handleClick}
+      >
         ON
       </button>
-      <button className="buttonOff">OFF</button>
+      <button
+        className={switched ? "buttonOn btl" : "buttonOff tl"}
+        onClick={handleClick}
+      >
+        OFF
+      </button>
     </div>
   );
 };

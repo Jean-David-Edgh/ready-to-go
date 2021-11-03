@@ -6,7 +6,9 @@ import Launch from "./components/Launch";
 import { useState } from "react";
 
 function App() {
-  const [switched, setSwitch] = useState(0);
+  const [switched1, setSwitch1] = useState(false);
+  const [switched2, setSwitch2] = useState(false);
+  const [switched3, setSwitch3] = useState(false);
 
   return (
     <div className="app">
@@ -14,9 +16,9 @@ function App() {
 
       <div className="body">
         <div className="toggle">
-          <Switch switched={switched} setSwitch={setSwitch} />
-          <Switch switched={switched} setSwitch={setSwitch} />
-          <Switch switched={switched} setSwitch={setSwitch} />
+          <Switch switched={switched1} setSwitch={setSwitch1} />
+          <Switch switched={switched2} setSwitch={setSwitch2} />
+          <Switch switched={switched3} setSwitch={setSwitch3} />
         </div>
         <div className="ship">
           <Launch />
